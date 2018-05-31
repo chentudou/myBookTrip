@@ -1,0 +1,15 @@
+TRACE: 18-04-02 23:00:02 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][RAL] request start requestID=514146991735
+TRACE: 18-04-02 23:00:02 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][FormConverter] pack urlencode data succ ServiceID=BODY data=travelId=1955
+TRACE: 18-04-02 23:00:02 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][HttpProtocolBase] response end
+TRACE: 18-04-02 23:00:02 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][JsonConverter] unpack json data succ ServiceID=BODY
+NOTICE: 18-04-02 23:00:02 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][RAL] request end service=BODY requestID=514146991735 conv=form/json prot=http method=POST path=/pdf/bookTravel proxy=undefined query={} remote=192.168.8.72:8080 cost=116.385 talk=116.281 write=110.857 read=4.504 pack=0.084 unpack=0.750 retry=0/1
+TRACE: 18-04-02 23:00:15 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][RAL] request start requestID=515438881030
+TRACE: 18-04-02 23:00:15 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][FormConverter] pack urlencode data succ ServiceID=BODY data=travelId=1955
+TRACE: 18-04-02 23:00:15 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][HttpProtocolBase] response end
+TRACE: 18-04-02 23:00:15 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][JsonConverter] unpack json data succ ServiceID=BODY
+NOTICE: 18-04-02 23:00:15 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][RAL] request end service=BODY requestID=515438881030 conv=form/json prot=http method=POST path=/pdf/bookTravel proxy=undefined query={} remote=192.168.8.72:8080 cost=107.637 talk=107.544 write=102.150 read=4.144 pack=0.057 unpack=1.124 retry=0/1
+TRACE: 18-04-02 23:05:53 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][RAL] request start requestID=549233700848
+TRACE: 18-04-02 23:05:53 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][FormConverter] pack urlencode data succ ServiceID=BODY data=travelId=1955
+TRACE: 18-04-02 23:05:53 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][HttpProtocolBase] response end
+TRACE: 18-04-02 23:05:53 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][JsonConverter] unpack json data succ ServiceID=BODY
+NOTICE: 18-04-02 23:05:53 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][RAL] request end service=BODY requestID=549233700848 conv=form/json prot=http method=POST path=/pdf/bookTravel proxy=undefined query={} remote=192.168.8.72:8080 cost=114.945 talk=114.841 write=109.149 read=4.719 pack=0.061 unpack=0.844 retry=0/1

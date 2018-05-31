@@ -1,0 +1,10 @@
+TRACE: 18-04-10 19:48:11 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][RAL] request start requestID=10758677060197
+TRACE: 18-04-10 19:48:11 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][QuertStringConverter] pack querystring data succ ServiceID=QUERY data={"travelId":"1960"}
+TRACE: 18-04-10 19:48:11 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][HttpProtocolBase] response end
+TRACE: 18-04-10 19:48:11 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][JsonConverter] unpack json data succ ServiceID=QUERY
+NOTICE: 18-04-10 19:48:11 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][RAL] request end service=QUERY requestID=10758677060197 conv=querystring/json prot=http method=GET path=/travelPhone/getTraveById?travelId=1960 proxy=undefined query={"travelId":"1960"} remote=192.168.8.72:8080 cost=144.510 talk=122.017 write=35.431 read=73.569 pack=12.738 unpack=0.192 retry=0/1
+TRACE: 18-04-10 19:48:51 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][RAL] request start requestID=10762671885819
+TRACE: 18-04-10 19:48:51 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][FormConverter] pack urlencode data succ ServiceID=BODY data=travelId=1960
+TRACE: 18-04-10 19:48:51 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][HttpProtocolBase] response end
+TRACE: 18-04-10 19:48:51 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][JsonConverter] unpack json data succ ServiceID=BODY
+NOTICE: 18-04-10 19:48:51 [-:-] errno[0] logId[-] uri[-] user[-] refer[-] cookie[-] custom[-]  [yog-ral] [cluster main][RAL] request end service=BODY requestID=10762671885819 conv=form/json prot=http method=POST path=/pdf/bookTravel proxy=undefined query={} remote=192.168.8.72:8080 cost=566.585 talk=566.474 write=301.290 read=0.337 pack=0.086 unpack=264.673 retry=0/1

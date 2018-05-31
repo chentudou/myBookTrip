@@ -1,0 +1,497 @@
+/* @name wowBook @desc style for wowBook plugin for jQuery  @author Marcio Aguiar  @version 1.3.1 Date: Wed Dec 8 10:05:49 2010 -0200*/
+
+.wowbook {
+    position: relative;
+    zoom: 1;
+    -ms-text-size-adjust: auto;
+    -webkit-text-size-adjust: auto;
+}
+
+.wowbook-origin {
+    z-index: 1;
+}
+
+.wowbook-page {
+    zoom: 1;
+}
+
+.wowbook-page-content {
+    position: absolute;
+    overflow: hidden;
+    background: #fff;
+    zoom: 1;
+}
+
+.wowbook-loading .wowbook-zoomcontent {
+    opacity: 0;
+}
+
+.wowbook-zoomcontent {
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease-in;
+    -moz-transition: opacity 0.5s ease-in;
+    -o-transition: opacity 0.5s ease-in;
+    -ms-transition: opacity 0.5s ease-in;
+    transition: opacity 0.5s ease-in;
+}
+
+img.wowbook-lazy {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.wowbook-fullscreen-fix {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+/* marker class */
+.wowbook-left {
+}
+
+.wowbook-right {
+}
+
+.wowbook-disabled {
+}
+
+.wowbook-handle {
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 50px;
+    z-index: 100001;
+    /* without this Chrome will mess the zindex of hardcover when it flips, making
+       the cover to jump when the "curl page corner on hover" is enabled */
+    -webkit-transform: translate3d(0px, 0px, 10000px);
+}
+
+.wowbook-handle.wowbook-disabled {
+    display: none;
+}
+
+.wowbook-unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.wowbook-page-content.wowbook-double-page {
+    padding: 0;
+}
+
+/* hard page edge */
+.wowbook-hardpage {
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.wowbook-3d-border {
+    background: #eee;
+    height: 100%;
+    left: 100%;
+    position: absolute;
+    top: 0;
+    width: 5px;
+    -moz-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    -webkit-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+    -moz-transform-origin: 0 0 0;
+    -o-transform-origin: 0 0 0;
+    -webkit-transform-origin: 0 0 0;
+    -ms-transform-origin: 0 0 0;
+    transform-origin: 0 0 0;
+}
+
+.wowbook-left .wowbook-3d-border {
+    left: 0;
+}
+
+/* shadows */
+.wowbook-shadow-clipper {
+    position: absolute;
+    overflow: hidden;
+    z-index: 999;
+    zoom: 1;
+    -webkit-backface-visibility: hidden; /* eliminate jagged edges */
+}
+
+.wowbook-shadow-container {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    zoom: 1;
+}
+
+.wowbook-shadow-internal {
+    background: url(../images/shadow_internal_fold.png) repeat-y;
+    height: 500px;
+    width: 200px;
+    position: absolute;
+    zoom: 1;
+    -webkit-backface-visibility: hidden; /* eliminate jagged edges */
+}
+
+.wowbook-shadow-fold {
+    background: url(../images/shadow_fold.png) right top repeat-y;
+    height: 500px;
+    width: 100px;
+    position: absolute;
+    zoom: 1;
+    -webkit-backface-visibility: hidden; /* eliminate jagged edges */
+}
+
+.wowbook-fold-gradient {
+    background: url(../images/fold_gradient.png) right top repeat-y;
+    height: 500px;
+    width: 125px;
+    position: absolute;
+    top: 0;
+    zoom: 1;
+    -webkit-backface-visibility: hidden; /* eliminate jagged edges */
+}
+
+.wowbook-fold-gradient-container {
+    position: absolute;
+    z-index: 1001;
+}
+
+.wowbook-gutter-shadow {
+    height: 100%;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.wowbook-hard-page-shadow {
+    background: rgba(0, 0, 0, 0.2);
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transform: translatez(0);
+    -webkit-transform: translatez(0);
+}
+
+.wowbook-hard-page-dropshadow {
+    background: #888;
+    box-shadow: 0 0 21px 0px rgba(0,0,0,.29);
+    background: rgba(96, 96, 96, 0.5);
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    transform: translatez(0);
+    -webkit-transform: translatez(0);
+}
+
+.wowbook-book-shadow {
+    -moz-box-shadow: 0 0 21px rgba(0,0,0,.29);
+    -ms-box-shadow: 0 0 21px rgba(0,0,0,.29);
+    -webkit-box-shadow: 0 0 21px rgba(0,0,0,.29);
+    -o-box-shadow: 0 0 21px rgba(0,0,0,.29);
+    box-shadow: 0 0 21px rgba(0,0,0,.29); /* if you change this, change the .wowbook-hard-page-dropshadow too */
+}
+
+/* this should avoid a faint gray line in shadows element on android */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .wowbook-shadow-internal, .wowbook-gutter-shadow,
+    .wowbook-fold-gradient, .wowbook-shadow-fold {
+        image-rendering: pixelated;
+    }
+}
+
+.wowbook-page-number {
+    bottom: 0;
+    padding-bottom: 0.3em;
+    position: absolute;
+    z-index: 1;
+}
+
+.wowbook-left .wowbook-page-number {
+    left: 0;
+    padding-left: 0.5em;
+}
+
+.wowbook-right .wowbook-page-number {
+    right: 0;
+    padding-right: 0.5em;
+}
+
+.wowbook-page-holded {
+}
+
+.wowbook-page-holded object {
+    /* visibility: hidden; */
+}
+
+/*
+	Container
+*/
+.wowbook-container {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.wowbook-book-container {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.wowbook-book-container .wowbook {
+    margin: auto;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.wowbook-container-full {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/*
+	Lightbox
+*/
+.wowbook-lightbox-on {
+    overflow: hidden
+}
+
+.wowbook-lightbox-overlay {
+    display: none;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.wowbook-lightbox {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.wowbook-lightbox .wowbook-book-container {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wowbook-lightbox .wowbook {
+    margin: auto;
+    -moz-transform: none;
+    -o-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    top: auto;
+}
+
+.wowbook-lightbox .wowbook-toolbar {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+}
+
+.wowbook-lightbox > .wowbook-close {
+    background: #222;
+    border: 1px solid #555;
+    position: absolute;
+    right: 0;
+    color: white;
+    top: 0;
+    z-index: 10000;
+    height: 1.5em;
+    line-height: 1em;
+    padding: 0;
+    width: 1.5em;
+}
+
+/*
+ Wowbook toolbar font is a custom built font that contains icons from the following free icon sets:
+ - fontawesome http://fontawesome.io
+ - icomoon https://icomoon.io
+*/
+
+@keyframes wowbook-flash-animation {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.wowbook .highlight.selected {
+    animation-name: wowbook-flash-animation;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: 10; /*infinite*/
+}
+
+
+.wowbook-lightbox > .wowbook-close {
+    background: #222 linear-gradient(to bottom, #3c3c3c 0px, #222 100%) repeat-x scroll 0 0;
+    border: 1px solid #b8b8b8;
+    color: #b8b8b8;
+    display: none;
+}
+
+
+/****** 以下为自定义样式 *******/
+img{width: auto;height: auto;}
+body{background: #efefef;}
+.wowbook-left .wowbook-gutter-shadow {
+    background-image: url(../images/page_left_background.png); opacity:1;
+    width: 56px;right: 0;}
+/*.wowbook-page-content{background: #fff !important;}*/
+/*首屏 开始*/
+.firstPage span{display: inline-block;}
+.travelCode{font-size: 14px;color: #666;text-align: right;margin: 30px 38px 0 0;}
+.userName{font-size: 20px;color:#1763ba;margin:30px 0 30px 48px;}
+.travelInfo{color:#333;font-size:14px;text-align: center;margin-bottom:20px;}
+.travelInfoTit{font-size:18px;width:70%;margin-left: auto;margin-right: auto;
+    overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+#cover{margin: auto;}
+.controlArrow{position: absolute;top: 50%; transform: translateY(-50%);left:5%;z-index: 2;cursor: pointer;}
+.rightArrow{right:5%;left:inherit;}
+.turnPageLogo{margin:60px auto 0;}
+/*行程目录*/
+.pageBg{background:url(../images/turnPageBg.png) no-repeat; background-size:100%;}
+.pageTitle{margin:50px 0 30px 20px; }
+/*行程列表*/
+.tableBox{height:625px;overflow: hidden;}
+.tableBox:hover{overflow-y: auto;}
+.travelMenu{margin-left: 80px;text-align: center;font-size:14px;}
+.travelMenu th p{color:#1763ba;margin-bottom: 20px;font-weight: normal;  text-align: center;}/*6.13改*/
+.travelMenu td p{color:#333;margin-bottom: 23px;overflow: hidden;text-overflow:ellipsis;white-space:nowrap;}
+.travelDate{width:90px;margin-right:20px;}
+.arrivalCity{width:130px;margin-right:20px;}
+.travelTime{width:95px;}
+.travelMenu .travelDays{width:46px;height:46px;color:#fff;font-size:14px;background:#57a6ff;text-align: center;
+    line-height: 46px;border-radius:50%;margin-right:40px;margin-bottom:23px;}
+.daysBox{position: relative;}
+.travelLines{width:0;height:23px;border:1px dashed #ece0d0;position: absolute;left:23px;top:46px;}
+.travelMenu tr:last-child .travelLines{display: none;}
+
+.pageFooter{width:100%;font-size:12px;color:#333;font-style: italic;text-align: center;position: absolute;
+    bottom: 40px;}
+.pageFooter i{display: inline-block;width: 9px;height: 24px;background:url(../images/pageNumIcon.png) no-repeat;
+    margin-left:5px;}
+
+/*详细行程 开始*/
+.travelDetail{position: relative;}
+.travelDayTip{width: 36px;height:68px;color:#fff;font-size:12px;background: url(../images/travelDayBg.png) no-repeat;
+    text-align:center;position: absolute;right: 40px;top: -1px;}
+.travelDetail .pageTitle{margin-bottom:40px;}
+.itineraryBox{padding-left:70px;}
+.itineraryBox ul{border-left:1px dashed #ece0d0;margin-top: 5px;}
+.itineraryBox ul li{margin-left:-23px;margin-bottom:40px;}
+.itineraryBox ul li:last-child{margin-bottom:0;}
+.bookIcon{display:inline-block;margin-right:25px;vertical-align: top;margin-top:25px;}
+.bookIconMtop{margin-top: 0;}
+/*大交通*/
+.bigTraffic{display: inline-block;}
+.bigTraffic span{font-size:14px;color:#333;text-align: center;}
+.flight{color:#1763ba;width:111px;text-align:center;border-bottom:1px solid #ccc;padding-bottom:5px;
+    float: left;margin-top: -5px;}
+.bigTraffic div{float:left;}
+.flightTime{margin-top:17px;}
+
+.userAddInfo{display: inline-block;font-size: 14px;color:#333;}
+.infoBox{width:230px;margin-right:20px;display:inline-block;vertical-align: top;}
+.infoBox div{margin-bottom:15px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.infoBox span{display:inline-block;color:#1763ba;}
+.infoBox .manyLine{color:#1763ba;max-height: 60px;text-overflow: inherit;white-space: inherit;
+    display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;}
+.manyLine p{color:#333;display: inline-block;}
+.userAddInfo img{width:188px;height:100px;border-radius:10px;display: inline-block;}
+/*费用说明*/
+.feeDescription{padding:0 40px 0 50px;}
+.feeTitle{font-size:16px;color:#333;margin-bottom:10px;  line-height: normal;}/*6.13改*/
+.feeTitle img{float: left;margin-right:3px;}
+.feeParagraph{margin-bottom:10px;}
+.feeParagraph p{font-size:14px;color:#444444;line-height:2.5;}
+.feeParagraph h3{color:#1763ba;line-height:2.5;}
+/*封底*/
+.leaveMessage{width:440px;height: 520px;border: 1px dashed #9dcbff;margin:70px auto 50px;}
+.leaveMessage p{width:430px;height: 510px;border: 1px dashed #9dcbff;margin:5px auto;position: relative;}
+.leaveMessage span{font-size: 12px;color:#1763ba;position: absolute;right:18px;bottom:5px;}
+.leaveMessage i{width: 26px;height:26px;background:url(../images/pageEditIcon.png) no-repeat;
+    position: absolute;right: -10px;bottom: -10px;}
+.publicity{font-size: 20px;color:#1763ba;text-align: center;margin-bottom: 39px;}
+.tenderer p{font-size:12px;color: #333;margin-bottom:5px;text-align: center;}
+
+/*操作按钮*/
+.operatorBtn{position: absolute;bottom:20px;right:15px;z-index:2;}
+.operatorBtn div{width: 50px;height: 50px;padding:10px;background:#425b7c;cursor: pointer;}
+.operatorBtn img{width: 30px;height: 30px;}
+.operatorBtn p{color:#fff;font-size:14px;line-height:1.2;text-align: center;display: none;}
+.editBtn:hover img{display:none;}
+.editBtn:hover p{display:block;}
+.export:hover img{display:none;}
+.export:hover p{display:block;}
+.export{margin-top: 20px;}
+
+/*编辑弹框*/
+.models{width:100%;height:100%;position:fixed;top: 0;left:0;right:0;bottom: 0;z-index: 2;background:rgba(0,0,0,.6);
+    display:none;}
+.contentBox{width:800px;background:rgb(255,255,255);margin: auto;padding:0 35px;box-sizing:border-box;
+    border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;}
+
+.modelTab {border-bottom: 1px solid #e4eaf0;padding:40px 0 0 0;margin-bottom: 20px;}
+.modelTab li {display:inline-block;margin-right: 40px;list-style: none;}
+.modelTab a {padding-bottom: 20px;color: #97aacc;font-size: 16px;}
+.modelTab a:hover,.modelTab a:visited{text-decoration: none;}
+.modelTab .active a {color: #1e90e5;border-bottom: 3px solid #1e90e5;font-weight: bold;text-decoration: none;}
+.tab-pane ::-webkit-input-placeholder {color: rgb(188, 203, 229);}
+.tab-pane :-moz-placeholder {color: rgb(188, 203, 229);}
+.tab-pane :-ms-input-placeholder {color: rgb(188, 203, 229);}
+.tab-pane ::-moz-placeholder {color: rgb(188, 203, 229);}
+
+.userFillInfo{color:rgb(76,94,128);margin-bottom: 5px;}
+.marginT{margin-top:25px;}
+.fillInput{width:228px;height:34px;font-family:'Microsoft Yahei';border:1px solid rgb(228,234,240);padding-left:10px;}
+.fillTextarea{width:100%;height:277px;padding:10px;color:rgb(76,94,128);font-size:15px;line-height:1.5;border:1px solid rgb(228,234,240);resize:none;}
+
+/*封面图片*/
+.coverPicTit{font-size:16px;font-weight: bold;}
+.coverPicTit span{font-size:14px;font-weight: normal;display: inline-block;margin-left:5px;}
+.upCoverPic{width:420px;height:231px;margin:15px auto;border: 1px solid #d2d2d2;padding: 5px;}
+.upCoverPic img{width:100%;height:100%;}
+.typeImage{position: relative;}
+.typeImage span{width:68px;height:28px;font-size: 14px;border:1px solid #1e90e5;color:#1e90e5;text-align: center;
+    line-height: 26px;margin:10px auto;cursor: pointer;}
+.typeImage input{width: 68px;position: absolute;right: 50%;bottom: 0;background: transparent;
+    opacity: 0;margin-right:-34px;cursor: pointer;}
